@@ -24,6 +24,10 @@ header {
             @include title;
             font-size: 4rem;
             letter-spacing: 6px;
+
+            @media screen and (max-width: 768px) {
+                font-size: 2rem;
+            }
         }
 
         p {
@@ -62,14 +66,16 @@ header {
             display: flex;
             align-items: center;
         }
-        .nav-left{
+
+        .nav-left {
             /* //! Les li non hover change de couleur */
 
-            &:hover li:not(:hover){
+            &:hover li:not(:hover) {
                 background: none;
                 color: $white1;
             }
-            li{
+
+            li {
                 @include title;
                 font-size: 0.7rem;
                 padding: 0 15px;
@@ -78,17 +84,23 @@ header {
                 align-items: center;
                 cursor: pointer;
 
-                &:first-child{
+                @media screen and (max-width: 768px) {
+                    font-size: 0.5rem;
+                }
+
+                &:first-child {
                     background: $white1;
                     color: $black1;
                 }
-                &:hover{
+
+                &:hover {
                     background: $white1;
                     color: $black1;
                 }
             }
         }
-        .nav-right{
+
+        .nav-right {
             font-size: 1.1rem;
             min-width: 100px;
             width: 25%;
@@ -96,7 +108,18 @@ header {
             justify-content: space-around;
             margin-right: 10px;
 
+            @media screen and (max-width: 768px) {
+                display: none;
+            }
 
+            li {
+                transition: all 0.3s ease-in-out;
+                cursor: pointer;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
         }
     }
 
